@@ -6,15 +6,18 @@ type InputProps = {
     type : string,
     place ?: string,
     name : string,
-    special?: string
+    cols ?: number,
+    rows ?: number
+    classes?: string,
+    isTextarea : boolean
 }
 
-const Input: React.FC<InputProps> = ({ id, type, place, name, special }) => {
+const Input: React.FC<InputProps> = ({ id, type, place, name, classes, isTextarea, cols, rows }) => {
 
     const InputClasses = classNames(
         "w-full pl-3 border-0 outline-0 shadow bg-gray-200",
         {
-            [special!]: special
+            [classes!]: classes
         }
       )
 
@@ -26,13 +29,27 @@ const Input: React.FC<InputProps> = ({ id, type, place, name, special }) => {
             >
                 {name}
             </label>
-            <input 
-                type={type} 
-                id={id} 
-                name={id} 
-                placeholder={place} 
-                className={InputClasses}
-            />
+            {
+                !isTextarea ? (
+                    <input 
+                        type={type} 
+                        id={id} 
+                        name={id} 
+                        placeholder={place} 
+                        className={InputClasses}
+                    />
+                ) : (
+                    <textarea 
+                        name={id} 
+                        id={id} 
+                        cols={cols} 
+                        rows={rows}
+                        className={InputClasses}
+                    ></textarea>
+                )
+            }
+            
+            
         </div>
     )
 }

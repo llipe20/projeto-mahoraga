@@ -1,5 +1,6 @@
 import React from 'react'
 import Input from '../Input'
+import Button from '../Button'
 
 const NewProject: React.FC = () => {
     return (
@@ -8,31 +9,38 @@ const NewProject: React.FC = () => {
                 New Project
             </h1>
             <h2 className="text-center text-lg lg:text-xl">
-                Crie seu projeto para depois adicionar as tarefas 
+                Create your project and then add tasks 
             </h2>
 
             <form className="flex flex-col justify-center items-center gap-5 p-2 mt-5 w-full lg:w-1/2 h-auto" action="POST">
                 <Input
+                    isTextarea={false}
                     id='input-title'
-                    name='Nome do projeto:'
+                    name='Project name:'
                     type='text'
                     place='Insira o nome do projeto'
-                    special='h-10 lg:h-12'
+                    classes='h-10 lg:h-12'
                 />
                 <Input
+                    isTextarea={false}
                     id='input-sub'
-                    name='Sub-título:'
+                    name='Sub-title:'
                     type='text'
                     place='Insira um sub-título'
-                    special='h-10 lg:h-12'
+                    classes='h-10 lg:h-12'
                 />
                 <Input
+                    isTextarea={true}
                     id='input-overview'
-                    name='Descrição:'
+                    name='Overview:'
                     type='textarea'
                     place='Explique sobre o projeto'
-                    special='h-20'
+                    rows={4}
+                    classes='p-2'
                 />
+                <Button classes='bg-black text-white w-28'>
+                    Create
+                </Button>
             </form>
         </div>
     )
