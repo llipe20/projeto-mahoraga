@@ -1,9 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { navs } from '../router/index'
+import { rotas } from '../router'
+
+interface Router {
+    id : number,
+    name: string,
+    path: string,
+    component : React.FC
+}
 
 const NavBar: React.FC = () => {
 
+    const navs: Router[] = rotas.filter((rota) => rota.name !== 'New project')  
     return (
         <div className="flex justify-center items-center w-full h-20 lg:h-24 bg-black text-white">
             <nav className="flex justify-between items-center w-full lg:w-4/5 h-full  pl-5 pr-5 lg:p-0">

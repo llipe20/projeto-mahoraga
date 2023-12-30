@@ -23,7 +23,7 @@ const rotas: Router[] = [
     },
     {
         id: 20,
-        name : 'Project',
+        name : 'Projects',
         path : '/project',
         component : Project
     },
@@ -41,18 +41,17 @@ const rotas: Router[] = [
     }
 ]
 
-const navs: Router[] = rotas.filter((rota) => rota.name !== 'New project')
-
 const Routers: React.FC = () => {
+
         return (
             <div className="flex lg:min-h-screen w-full lg:w-4/5">
                 <Routes>
                     {
-                        navs.map((nav) => (
+                        rotas.map((rota) => (
                             <Route 
-                                key={nav.id}
-                                path={nav.path}
-                                Component={nav.component}
+                                key={rota.id}
+                                path={rota.path}
+                                Component={rota.component}
                             />
                         ))
                     }
@@ -61,4 +60,4 @@ const Routers: React.FC = () => {
         )
 }
 
-export {Routers, rotas, navs}
+export { Routers, rotas }
