@@ -1,0 +1,26 @@
+/* Remover barra de rolagem nativa do navegador */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Rolagem suave da página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Efeito de hover nos links nav */
+.maho:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #0077cc; 
+    transition: all 0.3s ease-in-out; 
+}
+
+.maho:hover::after {
+    width: 100%; 
+    left: 0;
+}
