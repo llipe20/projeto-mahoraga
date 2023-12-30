@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily : {
-        'inter' : ['Inter' , 'sans-serif']
+        'inter' : ['Inter' , 'sans-serif'],
+        'Kaisen' : ['Kaisen', 'Inter', 'sans-serif']
       }
     },
   },

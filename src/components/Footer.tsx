@@ -33,19 +33,19 @@ const Footer: React.FC = () => {
     ]
 
     return (
-        <div className="flex flex-col justify-center items-center gap-2 w-full h-auto p-5 bg-black lg:mt-5 text-sm lg:text-base text-white">
+        <div className="flex flex-col justify-center items-center gap-2 w-full h-auto p-5 bg-black text-sm lg:text-base text-white">
             {/* Logo */}
-            <div className="flex justify-center items-center gap-2 h-full w-full xl:text-2xl text-xl p-2">
-                <img className="w-10 h-10" src="/logo.png" alt="logo-mahoraga"/>
-                <span>
-                    Mahoraga
+            <div className="flex justify-center items-center gap-2 h-full w-full xl:text-2xl text-xl">
+                <img className="w-16 h-16" src="/roda.png" alt="logo-mahoraga"/>
+                <span className="font-gold">
+                    MAHORAGA
                 </span>
             </div>
             {/* List the social midia */}
             <ul className="flex flex-wrap justify-center itmes-center gap-3 w-full pt-2 pb-2">
                 {
                     links.map((link, index) => (
-                        <li className="hover:text-blue-900" key={index}>
+                        <li className="hover:font-gold" key={index}>
                             <a href={link.ancora} target="_blank" rel="noopener noreferrer">
                                 { link.icon }
                             </a>
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
             </ul>
             {/* Copy */}
             <div className="flex justify-center itmes-center w-full mb-2">
-                <p className="text-center pr-2 pl-2">
+                <p className="lg:flex gap-1 text-center pr-2 pl-2">
                     &copy; 2023 
                     <a href="https://github.com/llipe20/projeto-mahoraga">
                         projeto-mahoraga

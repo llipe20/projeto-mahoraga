@@ -4,8 +4,11 @@ import { Route, Routes } from 'react-router-dom'
 // import the componenets
 import Home from '../components/pages/Home'
 import NewProject from '../components/pages/NewProject'
+import Profile from '../components/pages/Profile'
+import Project from '../components/pages/Projects'
 
 interface Router {
+    id : number,
     name: string,
     path: string,
     component : React.FC
@@ -13,27 +16,43 @@ interface Router {
 
 const rotas: Router[] = [
     {
-        name : 'Inicio',
+        id: 10,
+        name : 'Home',
         path : '/',
         component : Home
     },
     {
-        name : 'Novo Projeto',
+        id: 20,
+        name : 'Project',
+        path : '/project',
+        component : Project
+    },
+    {
+        id: 30,
+        name : 'New project',
         path : '/new',
         component : NewProject
+    },
+    {
+        id: 40,
+        name : 'Profile',
+        path : '/profile',
+        component : Profile
     }
 ]
 
+const navs: Router[] = rotas.filter((rota) => rota.name !== 'New project')
+
 const Routers: React.FC = () => {
         return (
-            <div className="flex min-h-screen">
+            <div className="flex lg:min-h-screen w-full lg:w-4/5">
                 <Routes>
                     {
-                        rotas.map((rota, index) => (
+                        navs.map((nav) => (
                             <Route 
-                                key={index}
-                                path={rota.path}
-                                Component={rota.component}
+                                key={nav.id}
+                                path={nav.path}
+                                Component={nav.component}
                             />
                         ))
                     }
@@ -42,4 +61,4 @@ const Routers: React.FC = () => {
         )
 }
 
-export {Routers, rotas}
+export {Routers, rotas, navs}
