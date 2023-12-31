@@ -31,7 +31,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = (CardProps) => {
 
     const CardClasses = classNames(
-        "flex flex-col justify-center items-center gap-3.5 w-full shadow p-4 bg-gray-200",
+        "flex flex-col justify-center items-center gap-3.5 w-full p-4 bg-gray-200",
         {
             [CardProps.classes.box!] : CardProps.classes.box
         }
@@ -138,7 +138,7 @@ const Card: React.FC<CardProps> = (CardProps) => {
                 {/* Bloco 5: taks */}
                 {
                     CardProps.isTaks && (
-                        <section className="flex flex-col justify-center items-center gap-3 w-full h-auto bg-white p-4">
+                        <section className="flex flex-col justify-center items-center gap-3 w-full h-auto">
                             <div className="flex flex-col justify-center items-center w-full">
                                 <h2 className="w-full text-start text-lg lg:text-xl p-2 border-b border-black">
                                     My task
