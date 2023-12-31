@@ -15,10 +15,54 @@ const Project: React.FC = () => {
                         sub='Create your project and then add tasks'
                         prazo='Até 15 de jan'
                         status='Em andamento'
-                        username='Felipe'
-                        icon='https://via.placeholder.com/50' 
-                        title='Projetc name'
+                        title='Projetc name' 
+                        isTaks={true}
+                        classes={{}}
+                        user={{
+                            name:'Felipe',
+                            icon:'https://via.placeholder.com/50' 
+                        }}
                     >
+                        <Card 
+                            overview='The application aims to facilitate the organization and structuring of planning group projects or simple everyday tasks.'
+                            prazo='Até 15 de jan'
+                            status='Em andamento'
+                            title='Projetc name'
+                            classes={{
+                                title:'text-start w-full pl-6', 
+                                task :"lg:grid lg:grid-cols-2",
+                            }}
+                            isTaks={true}
+                        >
+                            <Card 
+                                overview='The application aims to facilitate the organization and structuring of planning group projects or simple everyday tasks.'
+                                prazo='Até 15 de jan'
+                                status='Pendente'
+                                sub='Projetc name'
+                                isTaks={false}
+                                classes={{
+                                    task :"",
+                                }}
+                                user={{
+                                    icon : 'https://via.placeholder.com/50',
+                                    name : 'Felipe'
+                                }}
+                            ></Card>  
+                            <Card 
+                                overview='The application aims to facilitate the organization and structuring of planning group projects or simple everyday tasks.'
+                                prazo='Até 15 de jan'
+                                status='Concluido'
+                                sub='Projetc name'
+                                isTaks={false}
+                                classes={{
+                                    task :"",
+                                }}
+                                user={{
+                                    icon : 'https://via.placeholder.com/50',
+                                    name : 'Felipe'
+                                }}
+                            ></Card>  
+                        </Card>
                     </Card>
                 </section>
                 
