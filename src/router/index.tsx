@@ -6,13 +6,7 @@ import Home from '../components/pages/Home'
 import NewProject from '../components/pages/NewProject'
 import Profile from '../components/pages/Profile'
 import Project from '../components/pages/Projects'
-
-interface Router {
-    id : number,
-    name: string,
-    path: string,
-    component : React.FC
-}
+import { Router } from '../assets/types'
 
 // Rotas 
 const rotas: Router[] = [

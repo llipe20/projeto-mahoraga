@@ -1,18 +1,5 @@
-import React, { ReactNode } from "react";
-import classNames from "classnames";
-
-type InputProps = {
-    id : string,
-    type : string,
-    place ?: string,
-    name : string,
-    label: string | ReactNode
-    cols ?: number,
-    rows ?: number
-    classes?: string,
-    isTextarea : boolean,
-    value?: string | ReactNode
-}
+import classNames from "classnames"
+import { InputProps } from "../assets/types"
 
 const Input: React.FC<InputProps> = ({ id, type, label, place, name, classes, isTextarea, cols, rows, value }) => {
 

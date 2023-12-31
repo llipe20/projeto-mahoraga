@@ -1,15 +1,9 @@
-import React from 'react'
 import Button from '../Button'
 import { Link } from 'react-router-dom'
 import { rotas } from '../../router/index'
+import { Router } from '../../assets/types'
 
 const Home: React.FC = () => {
-    interface Router {
-        id : number,
-        name: string,
-        path: string,
-        component : React.FC
-    }
 
     const create: Router | undefined = rotas.find((rota) => rota.id == 30)
 

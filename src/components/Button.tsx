@@ -1,12 +1,5 @@
-import React from "react";
 import classNames from "classnames";
-
-type ButtonProps = {
-  children: React.ReactNode,
-  onClick?: (...args: any[]) => void,
-  classes?: string,
-  type : "submit" | "reset" | "button"
-}
+import { ButtonProps } from "../assets/types"
 
 const Button: React.FC<ButtonProps> = ({ children, classes, type, onClick}) => {
   const buttonClasses = classNames(

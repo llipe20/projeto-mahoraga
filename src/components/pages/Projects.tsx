@@ -1,4 +1,4 @@
-import React from 'react'
+import '../../assets/types'
 import Card from '../Card'
 import icons from '../../db/icons'
 import Input from '../Input'

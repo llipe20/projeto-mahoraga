@@ -1,13 +1,6 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { rotas } from '../router'
-
-interface Router {
-    id : number,
-    name: string,
-    path: string,
-    component : React.FC
-}
+import { Router } from '../assets/types'
 
 const NavBar: React.FC = () => {
 

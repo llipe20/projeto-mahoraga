@@ -1,18 +1,11 @@
-import React from 'react'
 import Input from '../Input'
 import Button from '../Button'
 import { FaRegEdit } from "react-icons/fa"
 import icons from '../../db/icons'
+import '../../assets/types'
+import { OpenContainer } from '../../assets/functions'
 
 const Profile: React.FC = () => {
-    // Função de click para trazer o form de editar perfil
-    const ShowForm = (form: string, container: string) => {
-        const forms = document.getElementById(`${form}`) as HTMLFormElement
-        const contain = document.getElementById(`${container}`) as HTMLDivElement
-        forms.classList.remove('hidden')
-        contain.classList.remove('justify-start', 'lg:pt-20')
-        contain.classList.add('justify-center')
-    }
 
     return (
         <div id="container-profile" className="flex flex-col justify-start items-center gap-4 min-h-screen w-full text-black p-5 lg:pt-10">
@@ -21,7 +14,7 @@ const Profile: React.FC = () => {
                 <img 
                     src="https://via.placeholder.com/130" 
                     alt="img-user" 
-                    className="rounded-full w-32 lg:w-40" 
+                    className="rounded-full w-28 lg:w-40" 
                 />
                 <div className="flex flex-col justify-center items-start gap-3 w-2/3">
                     <h1 className="flex flex-col lg:flex row justify-center items-center gap-1 text-2xl lg:text-4xl">
@@ -31,7 +24,7 @@ const Profile: React.FC = () => {
                         email
                     </h2>
                 </div>
-                <Button type='button' onClick={() => ShowForm('form-profile', 'container-profile')}>
+                <Button type='button' onClick={() => OpenContainer('form-profile', true)}>
                     <FaRegEdit />
                 </Button>
             </section>

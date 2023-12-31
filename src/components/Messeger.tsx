@@ -1,10 +1,5 @@
 import classNames from 'classnames'
-import React, { ReactNode } from 'react'
-
-interface Messeger {
-    children : ReactNode,
-    classes : string
-}
+import { Messeger } from '../assets/types'
 
 const Messeger: React.FC<Messeger> = ({children, classes}) => {
 

@@ -1,31 +1,9 @@
-import React, { ReactNode } from "react"
 import classNames from "classnames"
-import Input from "./Input"
 import Button from "./Button"
 import { FaRegEdit } from "react-icons/fa"
 import { IoMdAdd } from "react-icons/io"
-import { SlArrowDown } from "react-icons/sl"
-import { SlArrowUp } from "react-icons/sl"
-
-
-interface CardProps {
-    children?: ReactNode,
-    classes : {
-        box ?: string,
-        title ?: string,
-        button ?: string,
-    },
-    user ?: {
-        name : string,
-        icon : string
-    }
-    title?: string,
-    sub?: string,
-    overview : string,
-    status : "Pendente" | "Em andamento" | "Concluido"
-    prazo : string,
-    isTaks: boolean
-}
+import { CardProps } from "../assets/types"
+import { OpenContainer } from "../assets/functions"
 
 const Card: React.FC<CardProps> = (CardProps) => {
 
@@ -102,15 +80,16 @@ const Card: React.FC<CardProps> = (CardProps) => {
                 {
                     CardProps.isTaks && (
                         <section className="flex flex-col justify-center items-center w-full h-auto gap-5 -mt-1 bg-white scale-95">
-                            <Button type="button" classes="w-full h-16 hover:scale-95 bg-white">
-                                <SlArrowDown />
+                            <Button type="button" classes="w-full h-16 hover:scale-95 bg-white" onClick={() => OpenContainer('container-task')}>
                                 <span className="text-center text-base lg:text-lg">
                                     My task
                                 </span>
                             </Button>
                             {/* Subs taks */}
-                            <div className="flex flex-col lg:grid lg:grid-cols-2 justify-center items-center gap-3 lg:gap-0 w-full h-auto p-4 lg:pb-6 pb-5 pt-0">
-                                { CardProps.children }
+                            <div id="container-task" className="hidden">
+                                <div className="flex flex-col lg:grid grid-cols-2 justify-center items-center gap-3 lg:gap-0 w-full h-auto p-4 lg:pb-6 pb-5 pt-0">
+                                    { CardProps.children }
+                                </div>
                             </div>
                         </section>
                     )

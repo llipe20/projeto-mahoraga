@@ -1,13 +1,7 @@
-import React, { ReactNode } from 'react'
 import { FaLinkedinIn, FaGithub, FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { Link } from '../assets/types'
 
 const Footer: React.FC = () => {
-
-    interface Link {
-        name : string,
-        ancora : string,
-        icon : ReactNode
-    }
 
     const links: Link[] = [
         {
