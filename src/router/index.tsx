@@ -43,21 +43,21 @@ const rotas: Router[] = [
 
 const Routers: React.FC = () => {
 
-        return (
-            <div className="flex lg:min-h-screen w-full lg:w-4/5">
-                <Routes>
-                    {
-                        rotas.map((rota) => (
-                            <Route 
-                                key={rota.id}
-                                path={rota.path}
-                                Component={rota.component}
-                            />
-                        ))
-                    }
-                </Routes>
-            </div>
-        )
+    return (
+        <div className="flex lg:min-h-screen w-full lg:w-4/5">
+            <Routes>
+                {
+                    rotas.map((rota) => (
+                        <Route 
+                            key={rota.id}
+                            path={rota.path}
+                            Component={rota.component}
+                        />
+                    ))
+                }
+            </Routes>
+        </div>
+    )
 }
 
 export { Routers, rotas }

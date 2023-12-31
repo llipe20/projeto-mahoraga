@@ -11,34 +11,41 @@ const NewProject: React.FC = () => {
             <h2 className="text-center text-lg lg:text-xl">
                 Create your project and then add tasks 
             </h2>
-
+             {/* Form the new project */}
             <form className="flex flex-col justify-center items-center gap-5 p-2 mt-5 w-full lg:w-1/2 h-auto" action="POST">
+                 {/* Input Project name */}
                 <Input
                     isTextarea={false}
                     id='input-title'
-                    name='Project name:'
+                    name='input-title'
+                    label='Project name:'
                     type='text'
                     place='Insira o nome do projeto'
-                    classes='h-10 lg:h-12'
+                    classes='w-full h-10 lg:h-12'
                 />
+                 {/* Input Sub-title */}
                 <Input
                     isTextarea={false}
                     id='input-sub'
-                    name='Sub-title:'
+                    name='input-sub'
+                    label='Sub-title:'
                     type='text'
                     place='Insira um sub-título'
-                    classes='h-10 lg:h-12'
+                    classes='w-full h-10 lg:h-12'
                 />
+                 {/* Input Overview */}
                 <Input
                     isTextarea={true}
                     id='input-overview'
-                    name='Overview:'
+                    name='input-overview'
+                    label='Overview:'
                     type='textarea'
                     place='Explique sobre o projeto'
                     rows={4}
-                    classes='p-2'
+                    classes='w-full p-2'
                 />
-                <Button classes='bg-black text-white w-28'>
+                 {/* Submit */}
+                <Button type='submit' classes='bg-black text-white w-28'>
                     Create
                 </Button>
             </form>

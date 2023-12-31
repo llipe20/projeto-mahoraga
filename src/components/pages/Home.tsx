@@ -3,14 +3,14 @@ import Button from '../Button'
 import { Link } from 'react-router-dom'
 import { rotas } from '../../router/index'
 
-interface Router {
-    id : number,
-    name: string,
-    path: string,
-    component : React.FC
-}
-
 const Home: React.FC = () => {
+    interface Router {
+        id : number,
+        name: string,
+        path: string,
+        component : React.FC
+    }
+
     const create: Router | undefined = rotas.find((rota) => rota.id == 30)
 
     return (
@@ -27,8 +27,9 @@ const Home: React.FC = () => {
             <p className="text-center text-base lg:text-lg lg:w-3/5">
                 The application aims to facilitate the organization and structuring of planning group projects or simple everyday tasks.
             </p>
+            {/* Router for create project */}
             <Link to={create?.path || ''}>
-                <Button classes='bg-black text-white'>
+                <Button type='button' classes='bg-black text-white'>
                     {create?.name}
                 </Button>
             </Link>
