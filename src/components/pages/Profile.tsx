@@ -21,7 +21,7 @@ const Profile: React.FC = () => {
                 <img 
                     src="https://via.placeholder.com/130" 
                     alt="img-user" 
-                    className="rounded-full" 
+                    className="rounded-full w-32 lg:w-40" 
                 />
                 <div className="flex flex-col justify-center items-start gap-3 w-2/3">
                     <h1 className="flex flex-col lg:flex row justify-center items-center gap-1 text-2xl lg:text-4xl">
@@ -69,12 +69,12 @@ const Profile: React.FC = () => {
                     Icons:
                 </h3>
                  {/* Input Icons */}
-                <ul className="grid grid-cols-5 gap-y-3 w-full">
+                <ul className="grid grid-cols-5 gap-y-3 w-full -mt-5 lg:mt-0">
                     {
                         icons.map((icon) => (
-                            <li className="flex justify-center items-center h-24 lg:h-32">
-                                <Button type='button' classes="w-auto h-auto rounded-full overflow-hidden hover:border-2 border-black p-0">
-                                    <img src={icon.url} alt={icon.name} className="w-20 lg:w-28 rounded-full" />
+                            <li className="flex justify-center items-center h-28 lg:h-32">
+                                <Button type='button' classes="w-auto h-auto rounded-full overflow-hidden p-0 hover:border-2 border-black">
+                                    <img src={icon.url} alt={icon.name} className="w-24 lg:w-28 rounded-full" />
                                 </Button>  
                             </li>
                         ))

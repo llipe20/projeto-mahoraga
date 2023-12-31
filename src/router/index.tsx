@@ -14,6 +14,7 @@ interface Router {
     component : React.FC
 }
 
+// Rotas 
 const rotas: Router[] = [
     {
         id: 10,

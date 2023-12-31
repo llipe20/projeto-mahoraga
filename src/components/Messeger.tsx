@@ -1,13 +1,24 @@
 import classNames from 'classnames'
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-const Messeger: React.FC = () => {
+interface Messeger {
+    children : ReactNode,
+    classes : string
+}
 
-    const MessegeClass: classNames = {}
+const Messeger: React.FC<Messeger> = ({children, classes}) => {
+
+    const MessegeClass = classNames (
+        "flex justify-center items-center gap-3 w-auto h-10 pl-3 pr-3",
+        {
+            [classes!] : classes
+        }
+    )
 
     return (
-        <div className="flex justify-center items-center gap-3 w-auto h-10 pl-3 pr-3">
-
+        <div className={MessegeClass}>
+            {/* Messege  */}
+            {children}
         </div>
     )
 }

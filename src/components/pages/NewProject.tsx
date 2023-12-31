@@ -5,7 +5,7 @@ import Button from '../Button'
 const NewProject: React.FC = () => {
     return (
         <div className="flex flex-col justify-center items-center gap-4 h-auto lg:h-screen w-full text-black p-5">
-             <h1 className="flex flex-col lg:flex row justify-center items-center gap-1 text-2xl lg:text-4xl">
+             <h1 className="flex flex-col lg:flex-row justify-center items-center gap-1 text-2xl lg:text-4xl">
                 New Project
             </h1>
             <h2 className="text-center text-lg lg:text-xl">
