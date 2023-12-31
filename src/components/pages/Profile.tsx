@@ -15,7 +15,7 @@ const Profile: React.FC = () => {
     }
 
     return (
-        <div id="container-profile" className="flex flex-col justify-start items-center gap-4 min-h-96 w-full text-black p-5 lg:pt-10">
+        <div id="container-profile" className="flex flex-col justify-start items-center gap-4 min-h-screen w-full text-black p-5 lg:pt-10">
             {/* Profile user */}
             <section className="flex justify-start items-center gap-7 w-full lg:w-1/2">
                 <img 

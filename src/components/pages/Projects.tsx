@@ -47,32 +47,21 @@ const Project: React.FC = () => {
                         status='Em andamento'
                         title='Projetc name' 
                         isTaks={true}
-                        classes={{}}
+                        classes={{
+                            
+                        }}
                         user={{
                             name:'Felipe',
                             icon:'https://via.placeholder.com/50' 
                         }}
                     >
                         <Card 
-                            overview='The application aims to facilitate the organization and structuring of planning group projects or simple everyday tasks.'
-                            prazo='Até 15 de jan'
-                            status='Em andamento'
-                            title='Projetc name'
-                            classes={{
-                                title:'text-start w-full lg:pl-6', 
-                                task :"lg:grid lg:grid-cols-2",
-                            }}
-                            isTaks={true}
-                        >
-                            <Card 
                                 overview='The application aims to facilitate the organization and structuring of planning group projects or simple everyday tasks.'
                                 prazo='Até 15 de jan'
                                 status='Pendente'
                                 sub='Projetc name'
                                 isTaks={false}
-                                classes={{
-                                    task :"",
-                                }}
+                                classes={{box :"border border-black scale-95"}}
                                 user={{
                                     icon : 'https://via.placeholder.com/50',
                                     name : 'Felipe'
@@ -85,14 +74,13 @@ const Project: React.FC = () => {
                                 sub='Projetc name'
                                 isTaks={false}
                                 classes={{
-                                    task :"",
+                                    box :"border border-black scale-95",
                                 }}
                                 user={{
                                     icon : 'https://via.placeholder.com/50',
                                     name : 'Felipe'
                                 }}
                             ></Card>  
-                        </Card>
                     </Card>
                 </section>
                 

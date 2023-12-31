@@ -14,7 +14,6 @@ interface CardProps {
         box ?: string,
         title ?: string,
         button ?: string,
-        task ?: string
     },
     user ?: {
         name : string,
@@ -37,34 +36,12 @@ const Card: React.FC<CardProps> = (CardProps) => {
         }
     )
 
-    // Classes paara personalizar
-    const TitleClasses = classNames(
-        "text-2xl lg:text-4xl lg:pt-2",
-        {
-            [CardProps.classes.title!] : CardProps.classes.title 
-        }
-    )
-
-    const ButtonClasses = classNames(
-        "w-full h-16 lg:36 hover:scale-95 mt-2 shadow bg-white",
-        {
-            [CardProps.classes.button!] : CardProps.classes.button 
-        }
-    )
-
     const StatusClasses = classNames(
         "w-4 h-4 rounded-full",
         {
             "bg-red-500" : CardProps.status === "Pendente",
             "bg-yellow-500" : CardProps.status === "Em andamento",
             "bg-green-500" : CardProps.status === "Concluido" 
-        }
-    )
-
-    const BoxTaks = classNames(
-        "flex flex-col justify-center items-center gap-4 w-full h-auto",
-        {
-            [CardProps.classes.task!] : CardProps.classes.task
         }
     )
 
@@ -94,7 +71,7 @@ const Card: React.FC<CardProps> = (CardProps) => {
                 {/* Bloco 2: Condicionais para title e sub-title */}
                 {  
                     CardProps.title !== undefined && (
-                        <h1 className={TitleClasses}>
+                        <h1 className="text-2xl lg:text-4xl lg:pt-2">
                            { CardProps.title }
                         </h1>
                     )
@@ -106,14 +83,14 @@ const Card: React.FC<CardProps> = (CardProps) => {
                         </h2>
                     ) 
                 }
-                <p className="text-center text-base lg:text-lg w-full lg:w-4/5">
+                <p className="text-center text-base lg:text-lg w-full lg:pb-2">
                     { CardProps.overview }
                 </p>
 
                 { /* Bloco 3: Botão para novas tarefas */}
                 {
                     CardProps.isTaks && (
-                        <Button type="button" classes={ButtonClasses}>
+                        <Button type="button" classes="w-full h-16 hover:scale-95 bg-white">
                             <IoMdAdd />
                             <span className="text-center text-base lg:text-lg">
                                 Add task
@@ -121,7 +98,24 @@ const Card: React.FC<CardProps> = (CardProps) => {
                         </Button>
                     )
                 }
-                {/* Bloco 4: Prazo e status da task */}
+                {/* Bloco 4: taks */}
+                {
+                    CardProps.isTaks && (
+                        <section className="flex flex-col justify-center items-center w-full h-auto gap-5 -mt-1 bg-white scale-95">
+                            <Button type="button" classes="w-full h-16 hover:scale-95 bg-white">
+                                <SlArrowDown />
+                                <span className="text-center text-base lg:text-lg">
+                                    My task
+                                </span>
+                            </Button>
+                            {/* Subs taks */}
+                            <div className="flex flex-col lg:grid lg:grid-cols-2 justify-center items-center gap-3 lg:gap-0 w-full h-auto p-4 lg:pb-6 pb-5 pt-0">
+                                { CardProps.children }
+                            </div>
+                        </section>
+                    )
+                }
+                {/* Bloco 5: Prazo e status da task */}
                 <div className="flex justify-between items-center p-2 w-full h-auto">
                     <span className="text-center text-base lg:text-lg">
                         { CardProps.prazo }
@@ -135,26 +129,6 @@ const Card: React.FC<CardProps> = (CardProps) => {
                         </span>
                     </div>
                 </div>
-
-                {/* Bloco 5: taks */}
-                {
-                    CardProps.isTaks && (
-                        <section className="flex flex-col justify-center items-center w-full h-auto">
-                            <div className="flex flex-col justify-center items-center w-full">
-                                <h2 className="w-full text-start text-lg lg:text-xl p-2 border-b border-black">
-                                    My task
-                                </h2>
-                                <Button type="button" classes="w-full h-12">
-                                    <SlArrowDown />
-                                </Button>
-                            </div>
-                            {/* Subs taks */}
-                            <div className={BoxTaks}>
-                                { CardProps.children }
-                            </div>
-                        </section>
-                    )
-                }
             </section>
         </> 
     )
