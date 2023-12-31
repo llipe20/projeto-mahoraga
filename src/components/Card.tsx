@@ -37,8 +37,9 @@ const Card: React.FC<CardProps> = (CardProps) => {
         }
     )
 
+    // Classes paara personalizar
     const TitleClasses = classNames(
-        "text-2xl lg:text-4xl pt-2",
+        "text-2xl lg:text-4xl lg:pt-2",
         {
             [CardProps.classes.title!] : CardProps.classes.title 
         }

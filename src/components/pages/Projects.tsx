@@ -1,11 +1,41 @@
 import React from 'react'
 import Card from '../Card'
 import icons from '../../db/icons'
+import Input from '../Input'
+import Button from '../Button'
 
 const Project: React.FC = () => {
     return (
         <>
             <div className="flex flex-col justify-center items-center gap-5 lg:gap-8 min-h-96 lg:min-h-screen w-full text-black p-5">
+                <section className="flex flex-col justify-center items-center gap-4 w-full lg:w-4/5">
+                    <h2 className="text-xl lg:text-2xl lg:mt-2">
+                        Trazer projeto
+                    </h2>
+                    <form className="flex flex-col lg:flex-row justfy-center items-start lg:items-end gap-3 w-full" action="POST">
+                        <Input
+                            id='input-id-project'
+                            isTextarea={false}
+                            label="Project ID :"
+                            name="input-id-project"
+                            type='text'
+                            place='Insira ID do projeto'
+                            classes='w-full h-10'
+                        />
+                        <Input
+                            id='input-name-project'
+                            isTextarea={false}
+                            label="Project name:"
+                            name="input-name-project"
+                            type='text'
+                            place='Insira o nome do projeto'
+                            classes='w-full h-10'
+                        />
+                        <Button type="submit" classes="bg-black text-white mt-2 lg:m-0">
+                            Search
+                        </Button>
+                    </form>
+                </section>
                 <h1 className="text-2xl lg:text-4xl">
                     Your projects
                 </h1>
@@ -29,7 +59,7 @@ const Project: React.FC = () => {
                             status='Em andamento'
                             title='Projetc name'
                             classes={{
-                                title:'text-start w-full pl-6', 
+                                title:'text-start w-full lg:pl-6', 
                                 task :"lg:grid lg:grid-cols-2",
                             }}
                             isTaks={true}
