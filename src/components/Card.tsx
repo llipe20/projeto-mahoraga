@@ -105,7 +105,7 @@ const Card: React.FC<CardProps> = (CardProps) => {
                         </h2>
                     ) 
                 }
-                <p className="text-center text-base lg:text-lg lg:w-4/5">
+                <p className="text-center text-base lg:text-lg w-full lg:w-4/5">
                     { CardProps.overview }
                 </p>
 
@@ -138,7 +138,7 @@ const Card: React.FC<CardProps> = (CardProps) => {
                 {/* Bloco 5: taks */}
                 {
                     CardProps.isTaks && (
-                        <section className="flex flex-col justify-center items-center gap-3 w-full h-auto">
+                        <section className="flex flex-col justify-center items-center w-full h-auto">
                             <div className="flex flex-col justify-center items-center w-full">
                                 <h2 className="w-full text-start text-lg lg:text-xl p-2 border-b border-black">
                                     My task
