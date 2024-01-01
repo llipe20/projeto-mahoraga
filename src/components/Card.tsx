@@ -1,6 +1,6 @@
 import classNames from "classnames"
 import Button from "./Button"
-import { FaRegEdit } from "react-icons/fa"
+import { FaRegEdit, FaRegTrashAlt  } from "react-icons/fa"
 import { IoMdAdd } from "react-icons/io"
 import { CardProps } from "../assets/types"
 import { OpenContainer } from "../assets/functions"
@@ -37,12 +37,18 @@ const Card: React.FC<CardProps> = (CardProps) => {
                                     className="rounded-full w-10 lg:w-14" 
                                 />
                                 <span className="text-base lg:text-lg">
-                                    { CardProps.user.name }
+                                    { CardProps.user.people }
                                 </span>
                             </div>
-                            <Button type='button' onClick={() => OpenContainer('container-edit', true)}>
-                                <FaRegEdit />
-                            </Button>
+                            <div className="flex justify-center items-center gap-2">
+                                <Button type='button' onClick={() => OpenContainer('container-edit', true)}>
+                                    <FaRegEdit />
+                                </Button>
+                                {/* button delete */}
+                                <Button type='button' onClick={() => OpenContainer('container-edit', true)}>
+                                <    FaRegTrashAlt />
+                                </Button>
+                            </div>
                         </div>
                     )
                 }
@@ -79,10 +85,10 @@ const Card: React.FC<CardProps> = (CardProps) => {
                 {/* Bloco 4: taks */}
                 {
                     CardProps.isTaks && (
-                        <section className="flex flex-col justify-center items-center w-full h-auto gap-5 -mt-1 bg-white scale-95">
+                        <section className="flex flex-col justify-center items-center w-full h-auto -mt-1 bg-white scale-95">
                             <Button type="button" classes="w-full h-16 hover:scale-95 bg-white" onClick={() => OpenContainer('container-task')}>
                                 <span className="text-center text-base lg:text-lg">
-                                    My task
+                                    Task
                                 </span>
                             </Button>
                             {/* Subs taks */}
@@ -95,7 +101,7 @@ const Card: React.FC<CardProps> = (CardProps) => {
                     )
                 }
                 {/* Bloco 5: Prazo e status da task */}
-                <div className="flex justify-between items-center p-2 w-full h-auto">
+                <div className="flex justify-between items-center p-2 w-full h-auto -mt-2">
                     <span className="text-center text-base lg:text-lg">
                         { CardProps.prazo }
                     </span>

@@ -53,7 +53,7 @@ const Profile: React.FC = () => {
                     isTextarea={false}
                     id='input-senha'
                     name='input-senha'
-                    label='Senha:'
+                    label='Password:'
                     type='text'
                     classes='w-full h-10 lg:h-12'
                 />

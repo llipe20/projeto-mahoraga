@@ -21,7 +21,7 @@ export interface CardProps {
         box ?: string
     },
     user ?: {
-        name : string,
+        people : string,
         icon : string
     }
     title?: string,
@@ -51,7 +51,7 @@ export type InputProps = {
     value?: string | ReactNode
 }
 
-export interface Messeger {
+export interface MessegerProps {
     children : ReactNode,
     classes : string
 }
@@ -66,3 +66,26 @@ export interface Icons {
     name : string,
     url : string
 } 
+
+export interface Task {
+    id_task : string | number,
+    title : string,
+    overview : string,
+    date : string,
+    status : "Pendente" | "Em andamento" | "Concluido",
+    people : string,
+    icon : string
+}
+
+export interface IProject {
+    id_project : string | number,
+    id_user : string | number,
+    title : string,
+    sub_title : string,
+    overview : string,
+    date : string,
+    status : "Pendente" | "Em andamento" | "Concluido",
+    people : string,
+    icon : string
+    task : Task[]
+}

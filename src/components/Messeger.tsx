@@ -1,10 +1,10 @@
 import classNames from 'classnames'
-import { Messeger } from '../assets/types'
+import { MessegerProps } from '../assets/types'
 
-const Messeger: React.FC<Messeger> = ({children, classes}) => {
+const Messeger: React.FC<MessegerProps> = ({children, classes}) => {
 
     const MessegeClass = classNames (
-        "flex justify-center items-center gap-3 w-auto h-10 pl-3 pr-3",
+        "flex justify-center items-center gap-3",
         {
             [classes!] : classes
         }
@@ -17,3 +17,5 @@ const Messeger: React.FC<Messeger> = ({children, classes}) => {
         </div>
     )
 }
+
+export default Messeger
