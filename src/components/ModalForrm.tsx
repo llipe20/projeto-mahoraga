@@ -84,12 +84,12 @@ const ModalForm: React.FC<FormProps> = (FormProps) => {
                                         Icon people:
                                     </h3>
                                     {/* Input Icons */}
-                                    <ul className="grid grid-cols-5 gap-y-3 w-full -mt-5 lg:mt-0 bg-gray-200 p-4">
+                                    <ul className="grid grid-cols-5 gap-2 p-2 w-full lg:mt-0 bg-gray-200">
                                         {
                                             icons.map((icon) => (
-                                                <li className="flex justify-center items-center h-24">
-                                                    <Button type='button' classes="w-auto h-auto rounded-full overflow-hidden p-0">
-                                                        <img src={icon.url} alt={icon.name} className="w-24 rounded-full hover:border-4 border-black" />
+                                                <li className="flex justify-center items-center w-full h-full hover:border-2 border-black shadow">
+                                                    <Button type='button' classes="w-full h-full rounded-full overflow-hidden p-px">
+                                                        <img src={icon.url} alt={icon.name} className="rounded-full" />
                                                     </Button>  
                                                 </li>
                                             ))
@@ -99,7 +99,7 @@ const ModalForm: React.FC<FormProps> = (FormProps) => {
                             )  
                         }
                         <Button type='submit' classes='bg-black text-white w-28'>
-                            Update
+                            { FormProps.id === 'container-create' ? 'Create ': 'Update'}
                         </Button>
                     </form>
                 </section>
