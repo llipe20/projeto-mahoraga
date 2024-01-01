@@ -3,11 +3,12 @@ import Card from '../Card'
 import icons from '../../db/icons'
 import Input from '../Input'
 import Button from '../Button'
+import ModalForm from '../ModalForrm'
 
 const Project: React.FC = () => {
     return (
         <>
-            <div className="flex flex-col justify-center items-center gap-5 lg:gap-8 min-h-96 lg:min-h-screen w-full text-black p-5">
+            <div className="flex flex-col justify-center items-center gap-5 lg:gap-8 min-h-96 lg:min-h-screen w-full text-black p-5 lg:pb-8">
                 <section className="flex flex-col justify-center items-center gap-4 w-full lg:w-4/5">
                     <h2 className="text-xl lg:text-2xl lg:mt-2">
                         Trazer projeto
@@ -83,8 +84,9 @@ const Project: React.FC = () => {
                             ></Card>  
                     </Card>
                 </section>
-                
             </div>
+            <ModalForm id='container-edit' user={true} />
+            <ModalForm id='container-create' user={true} />
         </>
     )
 }

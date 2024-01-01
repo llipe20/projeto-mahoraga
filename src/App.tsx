@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="flex flex-col justify-between lg:justify-center items-center w-screen min-h-screen font-Inter">
+    <div className="flex flex-col justify-between lg:justify-center items-center w-screen min-h-screen font-Inter relative">
         <BrowserRouter>
             <NavBar />
             <Routers />

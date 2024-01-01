@@ -59,15 +59,15 @@ const Profile: React.FC = () => {
                 />
 
                 <h3 className="text-center font-bold w-full text-start lg:text-lg">
-                    Icons:
+                    Icon:
                 </h3>
                  {/* Input Icons */}
-                <ul className="grid grid-cols-5 gap-y-3 w-full -mt-5 lg:mt-0">
+                <ul className="grid grid-cols-5 gap-y-3 w-full -mt-5 lg:mt-0 bg-gray-200 p-4">
                     {
                         icons.map((icon) => (
-                            <li className="flex justify-center items-center h-28 lg:h-32">
-                                <Button type='button' classes="w-auto h-auto rounded-full overflow-hidden p-0 hover:border-2 border-black">
-                                    <img src={icon.url} alt={icon.name} className="w-24 lg:w-28 rounded-full" />
+                            <li className="flex justify-center items-center h-24">
+                                <Button type='button' classes="w-auto h-auto rounded-full overflow-hidden p-0">
+                                    <img src={icon.url} alt={icon.name} className="w-24 lg:w-24 rounded-full hover:border-4 border-black" />
                                 </Button>  
                             </li>
                         ))

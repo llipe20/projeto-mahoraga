@@ -1,18 +1,7 @@
-@font-face {
-    font-family: 'Kaisen';
-    src: url('./fonts/Jujutsu-Kaisen.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
 
 /* Remover barra de rolagem nativa do navegador */
 ::-webkit-scrollbar {
     display: none;
-}
-
-.text-kaisen {
-    font-family: 'Kaisen', sans-serif;
 }
 
 .font-gold {
@@ -20,6 +9,10 @@
     -webkit-background-clip: text; 
     background-clip: text;
     color: transparent;
+}
+
+.bg-modal {
+    background-color: rgba(0, 0, 0, 0.514);
 }
 
 /* Rolagem suave da página */

@@ -55,3 +55,14 @@ export interface Messeger {
     children : ReactNode,
     classes : string
 }
+
+export interface FormProps {
+    id : string,
+    user ?: boolean
+}
+
+export interface Icons {
+    id : number,
+    name : string,
+    url : string
+} 

@@ -40,7 +40,7 @@ const Card: React.FC<CardProps> = (CardProps) => {
                                     { CardProps.user.name }
                                 </span>
                             </div>
-                            <Button type='button'>
+                            <Button type='button' onClick={() => OpenContainer('container-edit', true)}>
                                 <FaRegEdit />
                             </Button>
                         </div>
@@ -68,7 +68,7 @@ const Card: React.FC<CardProps> = (CardProps) => {
                 { /* Bloco 3: Botão para novas tarefas */}
                 {
                     CardProps.isTaks && (
-                        <Button type="button" classes="w-full h-16 hover:scale-95 bg-white">
+                        <Button type="button" classes="w-full h-16 hover:scale-95 bg-white" onClick={() => OpenContainer('container-create', true)}>
                             <IoMdAdd />
                             <span className="text-center text-base lg:text-lg">
                                 Add task
